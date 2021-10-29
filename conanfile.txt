@@ -1,0 +1,11 @@
+[requires]
+gtest/1.11.0
+
+[generators]
+cmake
+
+[options]
+gtest:shared=True
+
+[imports]
+bin, *.dll -> ./bin
