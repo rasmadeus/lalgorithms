@@ -5,5 +5,9 @@ add_executable(
         graph_test.cpp
 )
 
-target_link_libraries(unit_test_graphs CONAN_PKG::gtest)
+target_link_libraries(unit_test_graphs
+    CONAN_PKG::gtest
+    graphs
+)
+
 add_test(NAME unit_test_graphs COMMAND unit_test_graphs)
