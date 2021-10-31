@@ -1,5 +1,6 @@
 #include "union_find.h"
 #include <cassert>
+#include <iostream>
 
 namespace lalg
 {
@@ -24,15 +25,37 @@ namespace lalg
         return m_vertexParents[vertex];
     }
 
-    void UnionFind::unionSet(std::size_t child, std::size_t parent)
+    void UnionFind::unionSet(std::size_t vertex1, std::size_t vertex2)
     {
-        assert(child < m_vertexParents.size());
-        assert(parent < m_vertexParents.size());
+        assert(vertex1 < m_vertexParents.size());
+        assert(vertex2 < m_vertexParents.size());
+
+        auto const parent1 = parent(vertex1);
+        auto const parent2 = parent(vertex2);
+
+        if (parent1 == parent2) {
+            return;
+        }
 
         for (std::size_t i = 0; i < m_vertexParents.size(); ++i) {
-            if (m_vertexParents[i] == child) {
-                m_vertexParents[i] = parent;
+            if (m_vertexParents[i] == parent2) {
+                m_vertexParents[i] = parent1;
             }
         }
+    }
+
+    std::size_t UnionFind::numberOfVertexes() const
+    {
+        return m_vertexParents.size();
+    }
+    void UnionFind::show() const
+    {
+        for (std::size_t i = 0; i < m_vertexParents.size(); ++i) {
+            std::cout << i << ":" << m_vertexParents[i] << ";";
+            if (i < m_vertexParents.size() - 1) {
+                std::cout << " ";
+            }
+        }
+        std::cout << "\n";
     }
 }

@@ -11,7 +11,9 @@ namespace lalg
         UnionFind(std::size_t numberOfVertexes);
         bool connected(std::size_t vertex1, std::size_t vertex2) const;
         std::size_t parent(std::size_t vertex) const;
-        void unionSet(std::size_t child, std::size_t parent);
+        void unionSet(std::size_t vertex1, std::size_t vertex2);
+        std::size_t numberOfVertexes() const;
+        void show() const;
 
     private:
         std::vector<std::size_t> m_vertexParents;

@@ -3,11 +3,11 @@
 #include <gtest/gtest.h>
 #include <union_find.h>
 
-class UnionFindTest : public testing::Test
+namespace lalg
 {
-protected:
-    void SetUp() override;
-
-protected:
-    lalg::UnionFind m_graph{ 1 };
-};
+    class UnionFindTest : public testing::Test
+    {
+    protected:
+        lalg::UnionFind m_unionFind{ 10 };
+    };
+}
