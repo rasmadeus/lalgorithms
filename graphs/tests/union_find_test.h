@@ -8,6 +8,7 @@ namespace lalg
     class UnionFindTest : public testing::Test
     {
     protected:
-        lalg::UnionFind m_unionFind{ 10 };
+        lalg::QuickFind m_quickFind{ 10 };
+        lalg::QuickUnion m_quickUnion{ 10 };
     };
 }

@@ -5,15 +5,28 @@
 
 namespace lalg
 {
-    class GRAPHS_EXPORT UnionFind
+    class GRAPHS_EXPORT QuickFind
     {
     public:
-        UnionFind(std::size_t numberOfVertexes);
+        QuickFind(std::size_t numberOfVertexes);
         bool connected(std::size_t vertex1, std::size_t vertex2) const;
         std::size_t parent(std::size_t vertex) const;
         void unionSet(std::size_t vertex1, std::size_t vertex2);
         std::size_t numberOfVertexes() const;
         void show() const;
+
+    private:
+        std::vector<std::size_t> m_vertexParents;
+    };
+
+    class GRAPHS_EXPORT QuickUnion
+    {
+    public:
+        QuickUnion(std::size_t numberOfVertexes);
+        bool connected(std::size_t vertex1, std::size_t vertex2) const;
+        std::size_t parent(std::size_t vertex) const;
+        void unionSet(std::size_t vertex1, std::size_t vertex2);
+        std::size_t numberOfVertexes() const;
 
     private:
         std::vector<std::size_t> m_vertexParents;
