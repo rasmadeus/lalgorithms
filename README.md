@@ -1,2 +1,2 @@
-The repository was added on purpose to keep
-the source code produced during algorithms learning.
+The repository was added in order to keep
+the source code produced during algorithm learning.
